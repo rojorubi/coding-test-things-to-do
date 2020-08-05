@@ -1,5 +1,5 @@
 
-# Reto: Lista de tareas personalizada. SOLUCIÓN: Rubí Rincón Peña (rojorubi@gmail.com)
+# Reto: Lista de tareas personalizada. Solución: Rubí Rincón Peña (rojorubi@gmail.com)
 
 
 Esta prueba técnica consistirá en crear una pequeña aplicación backend que exponga una API REST que permita a un usuario gestionar una lista de tareas personalizada.
@@ -10,6 +10,17 @@ El candidato tendrá que desarrollar este ejercicio utilizando Java y Spring Fra
 
 Como entregable final, se facilitará el acceso al código fuente original, en el formato elegido por el candidato, así como los pasos a seguir para poner la aplicación en marcha.
 
+## Instalaciones previas si son necesarias
+
+Utilizar versión del directorio coding-test-things-to-do/apache-maven-3.6.3-bin.tar.gz o descargar en http://maven.apache.org/install.html 
+
+```bash
+$ tar xzvf apache-maven-3.6.3-bin.tar.gz
+```
+
+```bash
+$ export PATH=/Library/apache-maven-3.6.3/bin:$PATH
+```
 
 ## Instrucciones para levantar y probar el microservicio
 
@@ -29,15 +40,15 @@ A partir de aquí podemos acceder a la url http://localhost:8080/swagger-ui.html
 
 
 
-##/create
+## /create
 	Endpoint que permite crear una tarea y asigna un identificador de forma automática a al tarea
-##/finish
+## /finish
 	Endpoint que permite cambiar el estado de una tarea a finalizada a partir del id de la tarea
-##/getAllTask
+## /getAllTask
 	Endpoint que obtiene un listado completo de todas las tareas
-##/task/{taskId}
+## /task/{taskId}
 	Endpoint que permite borrar una tarea de forma definitva a partir del id de la tarea
-##/update/{taskId}
+## /update/{taskId}
 	Endpoint que permite editar una tarea
 
 
