@@ -1,5 +1,6 @@
 
-# SOLUCIÓN: Rubí Rincón Peña (rojorubi@gmail.com)
+# Reto: Lista de tareas personalizada. SOLUCIÓN: Rubí Rincón Peña (rojorubi@gmail.com)
+
 
 Esta prueba técnica consistirá en crear una pequeña aplicación backend que exponga una API REST que permita a un usuario gestionar una lista de tareas personalizada.
 
@@ -9,7 +10,11 @@ El candidato tendrá que desarrollar este ejercicio utilizando Java y Spring Fra
 
 Como entregable final, se facilitará el acceso al código fuente original, en el formato elegido por el candidato, así como los pasos a seguir para poner la aplicación en marcha.
 
+
 ## Instrucciones para levantar y probar el microservicio
+
+```bash
+$ git clone git@github.com:rojorubi/coding-test-things-to-do.git
 
 ```bash
 $ mvn install
@@ -48,6 +53,3 @@ Log4j 1.2.17
 Biblioteca open source desarrollada en Java por la Apache Software Foundation que permite escribir mensajes de registro, cuyo propósito es dejar constancia de una determinada transacción en tiempo de ejecución.
 
 Dozer 5.5.1 (aunque no ha hecho falta) 
-
-
-# Reto: Lista de tareas personalizada.
