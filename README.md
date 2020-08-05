@@ -15,6 +15,7 @@ Como entregable final, se facilitará el acceso al código fuente original, en e
 
 ```bash
 $ git clone git@github.com:rojorubi/coding-test-things-to-do.git
+```
 
 ```bash
 $ mvn install
