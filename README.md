@@ -71,6 +71,7 @@ Lombok es una librería que usa un conjunto de anotaciones reducido que nos perm
 Biblioteca open source desarrollada en Java por la Apache Software Foundation que permite escribir mensajes de registro, cuyo propósito es dejar constancia de una determinada transacción en tiempo de ejecución.
 
 ```diff
-+ Dozer 5.5.1
++ Dozer 5.5.1 
 ```
+(aunque no se ha necesitado)
 Librería Java para mapear Java Beans que copia de manera recursiva los datos, de un objeto a otro.
