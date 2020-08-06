@@ -24,7 +24,7 @@ $ tar xzvf apache-maven-3.6.3-bin.tar.gz
 ```
 
 ```bash
-$ export PATH=/Library/apache-maven-3.6.3/bin:$PATH
+$ export PATH=/Library/apache-maven-3.6.3/bin:$PATH (o ruta equivalente en nuestro ordenador, ejemplo para mac)
 ```
 
 ```bash
