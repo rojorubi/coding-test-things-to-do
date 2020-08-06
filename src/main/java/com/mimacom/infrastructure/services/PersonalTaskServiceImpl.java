@@ -113,6 +113,14 @@ public class PersonalTaskServiceImpl implements PersonalTaskService{
 		List<PersonalTask> tasks = inMemoryPersistence.getMyTasks();
 		ResponseTask taskDTO = new ResponseTask();
 		
+		Optional<PersonalTask> elementToFind = tasks.stream()
+	    		.filter(element -> element.getId()==taskId)
+		    	.findFirst();
+		
+		if(elementToFind.isPresent()) {
+			throw new MicroserviceException("Error al finalizar la tarea, el identificador = "+taskId+" de la tarea es incorrecto", ThingsToDoErrorCode.ERROR_FINISH_TASK_ID_NOT_EXIST);
+		}
+		
 		tasks.stream()
 	    	.filter(element -> element.getId()==taskId)
 	    	.findFirst()

@@ -21,7 +21,8 @@ public enum ThingsToDoErrorCode{
 	ERROR_CREATING_TASK_ID_NOT_EXIST("001-005", "Error creating task, the identifier is not valid", HttpStatus.INTERNAL_SERVER_ERROR),
 	ERROR_DELETING_TASK_ID_NOT_EXIST("001-006", "Error deleting task, the identifier is not valid", HttpStatus.INTERNAL_SERVER_ERROR),
 	ERROR_CREATING_TASK_TYPOLOGY_NOT_EXIST("001-007", "Error creating the task, the value of typology is not valid", HttpStatus.INTERNAL_SERVER_ERROR),
-	ERROR_DESCRIPTION_TOO_LONG("001-008", "Error, description too long", HttpStatus.INTERNAL_SERVER_ERROR);
+	ERROR_DESCRIPTION_TOO_LONG("001-008", "Error, description too long", HttpStatus.INTERNAL_SERVER_ERROR),
+	ERROR_FINISH_TASK_ID_NOT_EXIST("001-008", "Error finishing tash, the identifier is not valid", HttpStatus.INTERNAL_SERVER_ERROR);
 	
 	private final @NonNull String code;
 	private final @NonNull String message;
