@@ -11,7 +11,7 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @ToString
-public enum ThingsToDoErrorCode{		
+public enum ThingsToDoErrorCode implements ErrorCode{		
 	
 	DEFAULT("001-001", "This is a default error to make test", HttpStatus.INTERNAL_SERVER_ERROR),
 	ERROR_UNAUTHORIZED("001-400", "The user does not have permissions to perform the operation.", HttpStatus.UNAUTHORIZED),

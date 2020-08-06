@@ -62,7 +62,7 @@ public class PersonalTaskServiceImpl implements PersonalTaskService{
         	});
 		
 		}else {
-			throw new MicroserviceException("Error al intentar borrar la tarea, el identificador = "+taskId+" de la tarea es incorrecto", ThingsToDoErrorCode.ERROR_DELETING_TASK_ID_NOT_EXIST);			
+			throw new MicroserviceException(ThingsToDoErrorCode.ERROR_DELETING_TASK_ID_NOT_EXIST);			
 		}
 		return tasks;
 	}
@@ -101,7 +101,8 @@ public class PersonalTaskServiceImpl implements PersonalTaskService{
 	    	});
 			
 		}else {
-			throw new MicroserviceException("Error al actualizar la tarea, el identificador = "+taskId+" de la tarea es incorrecto", ThingsToDoErrorCode.ERROR_UPDATING_TASK_ID_NOT_EXIST);			
+			throw new MicroserviceException(ThingsToDoErrorCode.ERROR_UPDATING_TASK_ID_NOT_EXIST); 
+			//throw new MicroserviceException("Error al actualizar la tarea, el identificador = "+taskId+" de la tarea es incorrecto", ThingsToDoErrorCode.ERROR_UPDATING_TASK_ID_NOT_EXIST);			
 		}
 		
 		return taskDTO;
@@ -152,17 +153,16 @@ public class PersonalTaskServiceImpl implements PersonalTaskService{
 		if(maxId!=null) {
 		
 			if(listTipology.contains(personalTask.getTypology().toUpperCase())){
-			
+	
 				PersonalTask newPersonalTask = new PersonalTask(personalTaskMaxId.getId()+1, personalTask.getTypology(), personalTask.getDescription(), thingsToDoConfig.getPendingString());
 				tasks.add(newPersonalTask);
 			
 			}else {
-				throw new MicroserviceException("Error al crear la tarea, el valor de tipologia = "+personalTask.getTypology()+" no es válido, los"
-						+ " valores correctos son: "+listTipology.toString(), ThingsToDoErrorCode.ERROR_CREATING_TASK_TYPOLOGY_NOT_EXIST);	
+				throw new MicroserviceException(ThingsToDoErrorCode.ERROR_CREATING_TASK_TYPOLOGY_NOT_EXIST);	
 			}
 		
 		}else {
-			throw new MicroserviceException("Error al crear la tarea, error al crear el identificador de la tarea", ThingsToDoErrorCode.ERROR_CREATING_TASK_ID_NOT_EXIST);			
+			throw new MicroserviceException(ThingsToDoErrorCode.ERROR_CREATING_TASK_ID_NOT_EXIST);			
 		}
 		
 		return tasks;

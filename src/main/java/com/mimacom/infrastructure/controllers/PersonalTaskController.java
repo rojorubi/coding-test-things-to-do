@@ -52,12 +52,12 @@ public class PersonalTaskController {
 	public ResponseEntity<ResponseTask> updateTask(@PathVariable(required = true) Integer taskId, 
 			@RequestParam(defaultValue="", required=false) String typology,
 			@RequestParam(defaultValue="", required=false) String description, 
-			@RequestParam(defaultValue="", required=false) String status) throws Exception{
+			@RequestParam(defaultValue="", required=false) String status) {
 
     	ResponseTask taskDTO =  new ResponseTask();
 		
     	if(description.length() > thingsToDoConfig.getMaxSizeDescription()) {
-    		throw new MicroserviceException("Error actualizando la tarea, el tamaño máximo de la description es "+thingsToDoConfig.getMaxSizeDescription(), ThingsToDoErrorCode.ERROR_DESCRIPTION_TOO_LONG);			
+    		throw new MicroserviceException(ThingsToDoErrorCode.ERROR_DESCRIPTION_TOO_LONG);			
     	}
     	
     	taskDTO = personalTaskService.modifyPersonalTask(taskId, typology, description, status);
@@ -75,7 +75,7 @@ public class PersonalTaskController {
     	List<PersonalTask> listPersonalTask = new ArrayList<>();
     	
     	if(personalTask.getDescription().length() > thingsToDoConfig.getMaxSizeDescription()) {
-    		throw new MicroserviceException("Error creando la tarea,  el tamaño máximo de la description es "+thingsToDoConfig.getMaxSizeDescription(), ThingsToDoErrorCode.ERROR_DESCRIPTION_TOO_LONG);			
+    		throw new MicroserviceException(ThingsToDoErrorCode.ERROR_DESCRIPTION_TOO_LONG);			
     	}
     	
 		listPersonalTask = personalTaskService.createPersonalTask(personalTask);
