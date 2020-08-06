@@ -35,6 +35,8 @@ $ mvn install
 $ mvn spring-boot:run
 ```
 
+La aplicación comenzará cargando un total de cinco tareas.
+
 A partir de aquí podemos acceder a la url http://localhost:8080/swagger-ui.html para poder ver la documentación de los endpoints implementados en una misma clase controller:
 
 
