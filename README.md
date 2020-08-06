@@ -16,15 +16,15 @@ Como entregable final, se facilitará el acceso al código fuente original, en e
 Utilizar versión del directorio coding-test-things-to-do/apache-maven-3.6.3-bin.tar.gz o descargar en http://maven.apache.org/install.html 
 
 ```bash
+$ git clone git@github.com:rojorubi/coding-test-things-to-do.git
+```
+
+```bash
 $ tar xzvf apache-maven-3.6.3-bin.tar.gz
 ```
 
 ```bash
 $ export PATH=/Library/apache-maven-3.6.3/bin:$PATH
-```
-
-```bash
-$ git clone git@github.com:rojorubi/coding-test-things-to-do.git
 ```
 
 ```bash
