@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class ResponseTask {
 
 	String msg;
+	String code;
 	PersonalTask task;
 }
 

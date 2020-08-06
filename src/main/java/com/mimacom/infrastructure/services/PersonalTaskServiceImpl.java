@@ -118,24 +118,21 @@ public class PersonalTaskServiceImpl implements PersonalTaskService{
 		    	.findFirst();
 		
 		if(elementToFind.isPresent()) {
-			throw new MicroserviceException("Error al finalizar la tarea, el identificador = "+taskId+" de la tarea es incorrecto", ThingsToDoErrorCode.ERROR_FINISH_TASK_ID_NOT_EXIST);
-		}
-		
-		tasks.stream()
-	    	.filter(element -> element.getId()==taskId)
-	    	.findFirst()
-	    	.map(ele -> {
-	    		
-	    		ele.setStatus(thingsToDoConfig.getFinishString());
-	    		
-	    		taskDTO.setMsg("Tarea finalizada correctamente");
-	    		taskDTO.setTask(ele);
-	    		
-	    		return ele;
-	    	});
-		
-		if(taskDTO.getMsg().isEmpty()) {
-			taskDTO.setMsg("Error al finalizar la tarea");
+			
+			tasks.stream()
+		    	.filter(element -> element.getId()==taskId)
+		    	.findFirst()
+		    	.map(ele -> {
+		    		
+		    		ele.setStatus(thingsToDoConfig.getFinishString());
+		    		taskDTO.setTask(ele);
+		    		
+		    		return ele;
+		    	});
+
+		}else {
+			taskDTO.setMsg(ThingsToDoErrorCode.ERROR_FINISHING_TASK_ID_NOT_EXIST.getMessage());
+			taskDTO.setCode(ThingsToDoErrorCode.ERROR_FINISHING_TASK_ID_NOT_EXIST.getCode());
 		}
 		
 		return taskDTO;

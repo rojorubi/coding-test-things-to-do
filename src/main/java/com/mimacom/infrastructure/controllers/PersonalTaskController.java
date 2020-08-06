@@ -71,7 +71,7 @@ public class PersonalTaskController {
 		@ApiResponse(code = 200, message = "OK"),
 		@ApiResponse(code = 500, message = "Error")
 	})
-	public ResponseEntity<List<PersonalTask>> createPersonalTask (@RequestBody TaskDTO personalTask){
+	public ResponseEntity<List<PersonalTask>> createPersonalTask (@RequestBody TaskDTO personalTask) {
     	List<PersonalTask> listPersonalTask = new ArrayList<>();
     	
     	if(personalTask.getDescription().length() > thingsToDoConfig.getMaxSizeDescription()) {
@@ -85,16 +85,11 @@ public class PersonalTaskController {
     
     @ApiOperation("Endpoint que permite cambiar el estado de una tarea a finalizada a partir del id de la tarea")
 	@PostMapping(value = "/finish")
-	public ResponseEntity<ResponseTask> finishTask(@RequestParam("taskId") Integer taskId) throws Exception {
+	public ResponseEntity<ResponseTask> finishTask(@RequestParam("taskId") Integer taskId) {
     	ResponseTask taskDTO =  new ResponseTask();
-    	try {
-			
-			taskDTO = personalTaskService.finishPersonalTask(taskId);
-			
-		} catch (Exception e) {
-			log.error(e.getMessage(), e);
-			throw new MicroserviceException(ThingsToDoErrorCode.ERROR_FINISHING_TASK);
-		}
+    	
+    	taskDTO = personalTaskService.finishPersonalTask(taskId);
+    	
 		return new ResponseEntity<>(taskDTO, HttpStatus.OK);
 	}
     
