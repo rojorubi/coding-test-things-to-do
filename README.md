@@ -73,4 +73,4 @@ Biblioteca open source desarrollada en Java por la Apache Software Foundation qu
 ```diff
 + Dozer 5.5.1
 ```
-
+Librería Java para mapear Java Beans que copia de manera recursiva los datos, de un objeto a otro.
